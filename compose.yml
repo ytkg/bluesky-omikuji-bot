@@ -1,0 +1,8 @@
+services:
+  skyfall:
+    build: .
+    volumes:
+      - .:/app
+    command: bundle exec ruby stream.rb
+    env_file: .env
+    restart: always

@@ -1,0 +1,41 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base32 (0.3.4)
+    bskyrb (0.5.3)
+      date (>= 3.3.3)
+      httparty (>= 0.21.0)
+      json (>= 2.0)
+      xrpc (>= 0.0.4)
+    cbor (0.5.9.6)
+    date (3.3.3)
+    event_emitter (0.2.6)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
+    json (2.6.3)
+    mini_mime (1.1.2)
+    multi_xml (0.6.0)
+    skyfall (0.1.0)
+      base32 (~> 0.3, >= 0.3.4)
+      cbor (~> 0.5, >= 0.5.9.6)
+      websocket-client-simple (~> 0.6, >= 0.6.1)
+    websocket (1.2.9)
+    websocket-client-simple (0.6.1)
+      event_emitter
+      websocket
+    xrpc (0.0.4)
+      date
+      httparty
+      json (>= 2.0)
+
+PLATFORMS
+  x86_64-darwin-20
+  x86_64-linux
+
+DEPENDENCIES
+  bskyrb
+  skyfall
+
+BUNDLED WITH
+   2.4.13
