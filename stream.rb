@@ -4,7 +4,6 @@ require 'skyfall'
 require_relative './lib/omikuji'
 require_relative './lib/bluesky'
 
-bluesky = Bluesky.new
 sky = Skyfall::Stream.new('bsky.social', :subscribe_repos)
 
 sky.on_message do |m|
@@ -13,7 +12,10 @@ sky.on_message do |m|
   m.operations.each do |op|
     next unless op.action == :create && op.type == :bsky_post
 
-    bluesky.reply(op.uri, Omikuji.draw) if op.raw_record['text'] == '@omikuji.bsky.social おみくじ'
+    if op.raw_record['text'] == '@omikuji.bsky.social おみくじ'
+      bluesky = Bluesky.new
+      bluesky.reply(op.uri, Omikuji.draw)
+    end
   end
 end
 
